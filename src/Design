@@ -1,0 +1,48 @@
+LinearEquation Class:
+
+    Instance variables:
+        private point1_x = x value of point 1
+        private point1_y = y value of point 1
+        private point2_x = x value of point 2
+        private point2_y = y value of point 2
+        private slope
+        private y-intercept
+        private equationForm
+        private distance
+
+    Constructor:
+        public LinearEquation(int x1, int y1, int x2, int y2)
+            takes in point 1 and 2 x and y values and assigns them to each variable accordingly
+
+    Methods:
+        void slope()
+            gets the slope and store it in the variable slope
+            run y-intercept
+
+        void y-intercept()
+            get the y-intercept and store it in the variable y-intercept
+            run form
+
+        void distance()
+            get the distance and store it in variable distance
+
+        void form()
+            this.equationForm = slope + "x + " + y-intercept
+            run distance
+
+        String toString()
+            String stuff = "all that information stuff"
+            return stuff
+
+        double solve(double x)
+            double y = slope(x) + y-intercept
+            return y
+
+
+Runner Class
+    get the x and y values
+    call the constructor
+    method slope
+    print object
+    ask for x
+    solve for x and print
