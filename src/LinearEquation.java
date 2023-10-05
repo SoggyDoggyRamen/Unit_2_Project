@@ -1,3 +1,4 @@
+
 public class LinearEquation {
     private int point1_x;
     private int point1_y;
@@ -7,8 +8,9 @@ public class LinearEquation {
     private double numSlope;
     private String form;
     private double yIntercept;
+    private double distance;
 
-    public LinearEquation(int x1, int x2, int y1, int y2)
+    public LinearEquation(int x1, int y1, int x2, int y2)
     {
         point1_x = x1;
         point1_y = y1;
@@ -26,24 +28,35 @@ public class LinearEquation {
         int numerator = point2_y - point1_y;
         int denominator = point2_x - point1_x;
         this.slope = numerator + "/" + denominator;
+        yInt();
     }
 
     void yInt()
     {
-        numSlope = (point2_y - point1_y) / (point2_x - point1_x);
-        double yIntercept = -1 * (numSlope * point2_x);
+        numSlope = ((double)point2_y - point1_y) / ((double)point2_x - point1_x);
+        yIntercept = point1_y - numSlope * point1_x;
+        form();
     }
 
     void form()
     {
-        String form = slope + "x " + "+ " + yIntercept;
+        form = slope + "x" + " + " + yIntercept;
+        distance();
+    }
+
+    void distance()
+    {
+        distance = Math.sqrt(Math.pow(((double) point2_x - point1_x), 2) + Math.pow(((double) point2_y - point1_y), 2));
     }
 
     public String toString()
     {
        String s = "First Pair: (" + point1_x + "," +  point1_y + ") \n"
-               + "Second Pair: (" + point2_x + ", " + point2_y + ") \n"
-               + "Slope of line: " + numSlope;
+               + "Second Pair: (" + point2_x + "," + point2_y + ") \n"
+               + "Slope of line: " + numSlope + "\n"
+               + "Y - intercept: " + yIntercept + "\n"
+               + "Slope intercept form: " + form + "\n"
+               + "Distance between points: " + distance;
        return s;
     }
 }
