@@ -49,6 +49,10 @@ public class LinearEquation {
         distance = Math.sqrt(Math.pow(((double) point2_x - point1_x), 2) + Math.pow(((double) point2_y - point1_y), 2));
     }
 
+    public double solve(double x)
+    {
+        return numSlope * x + yIntercept;
+    }
     public String toString()
     {
        String s = "First Pair: (" + point1_x + "," +  point1_y + ") \n"
@@ -56,7 +60,7 @@ public class LinearEquation {
                + "Slope of line: " + numSlope + "\n"
                + "Y - intercept: " + yIntercept + "\n"
                + "Slope intercept form: " + form + "\n"
-               + "Distance between points: " + distance;
+               + "Distance between points: " + String.format("%.2f",distance) + "\n";
        return s;
     }
 }
